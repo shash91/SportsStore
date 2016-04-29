@@ -32,7 +32,7 @@ namespace SportsStore.UnitTests
                con.PageSize = 3;
 
             //ACt
-            ProductsListViewModel result = (ProductsListViewModel)con.List(2).Model;
+            ProductsListViewModel result = (ProductsListViewModel)con.List(null,2).Model;
 
                //Assert
                Product[] arr = result.Products.ToArray();
@@ -80,7 +80,7 @@ namespace SportsStore.UnitTests
 
             ProductController con = new ProductController(mock.Object);
             con.PageSize = 3;
-            ProductsListViewModel result = (ProductsListViewModel)con.List(2).Model;
+            ProductsListViewModel result = (ProductsListViewModel)con.List(null,2).Model;
 
             PagingInfo pageInfo = result.PagingInfo;
             Assert.AreEqual(pageInfo.CurrentPage, 2);
@@ -88,6 +88,28 @@ namespace SportsStore.UnitTests
             Assert.AreEqual(pageInfo.TotalItems, 5);
             Assert.AreEqual(pageInfo.Totalpages, 2);
         }
+        [TestMethod]
+        public void Can_Filter_By_Category()
+        {
+            Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[]
+            {
+                new Product {ProductID=1,Name="P1",Category="cat1" },
+                new Product {ProductID=2,Name="P2",Category="cat2" },
+                new Product {ProductID=3,Name="P3",Category="cat3" },
+                new Product {ProductID=4,Name="P4",Category="cat2" }
+            }.AsQueryable());
+            ProductController con = new ProductController(mock.Object);
+            con.PageSize = 3;
+
+            Product[] result = ((ProductsListViewModel)con.List("cat2", 1).Model).Products.ToArray();
+
+            Assert.AreEqual(result.Length, 2);
+            Assert.IsTrue(result[0].Name == "P2" && result[0].Category == "cat2");
+            Assert.IsTrue(result[1].Name == "P4" && result[1].Category == "cat2");
+
+        }
+        
     }
 }
 
