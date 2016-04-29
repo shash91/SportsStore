@@ -9,6 +9,7 @@ using SportsStore.WebUI.HtmlHelpers;
 using System.Linq;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Microsoft.CSharp;
 
 namespace SportsStore.UnitTests
 {
@@ -130,6 +131,28 @@ namespace SportsStore.UnitTests
             Assert.AreEqual(results[1], "cat2");
             Assert.AreEqual(results[2], "cat3");
         }
+        [TestMethod]
+        public void Indicates_Selected_category()
+        {
+            Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[]
+
+            {
+                 new Product { ProductID=1,Name="P1",Category="cat1"},
+                new Product { ProductID=2,Name="P2",Category="cat2"},
+                 new Product { ProductID=3,Name="P3",Category="cat3"},
+                  new Product { ProductID=4,Name="P4",Category="cat3"},
+            }.AsQueryable());
+
+            NavController target = new NavController(mock.Object);
+
+            string categorytoselect = "cat3";
+
+            string result = target.Menu(categorytoselect).ViewBag.SelectedCategory;
+
+            Assert.AreEqual(result, categorytoselect);
+        }
+
         
     }
 }
