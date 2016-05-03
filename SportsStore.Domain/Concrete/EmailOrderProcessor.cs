@@ -65,8 +65,8 @@ namespace SportsStore.Domain.Concrete
                     .AppendLine(shippingInfo.State ?? "")
                     .AppendLine(shippingInfo.Country)
                     .AppendLine(shippingInfo.zip)
-                    .AppendLine("----")
-                    .AppendFormat("Gift wrap: {0}", shippingInfo.GiftWrap ? "Yes" : "No");
+                    .AppendLine("----");
+                 // .AppendFormat("Gift wrap: {0}",shippingInfo.GiftWrap ? "Yes" : "No");
 
 
                 MailMessage mailMessage = new MailMessage(emailsettings.MailFromAddress,
