@@ -61,7 +61,6 @@ C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\SportsStore.UnitTests.dl
 C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\SportsStore.UnitTests.pdb
 C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\EntityFramework.dll
 C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\EntityFramework.SqlServer.dll
-C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\Moq.dll
 C:\Projects\SportsStore\SportsStore.UnitTests\bin\Debug\Ninject.dll
