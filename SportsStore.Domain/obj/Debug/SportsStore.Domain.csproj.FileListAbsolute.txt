@@ -47,3 +47,4 @@ C:\Projects\SportsStore\SportsStore.Domain\bin\Debug\System.Web.WebPages.Deploym
 C:\Projects\SportsStore\SportsStore.Domain\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Projects\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.dll
 C:\Projects\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.pdb
+C:\Projects\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.csprojResolveAssemblyReference.cache
