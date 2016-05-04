@@ -14,3 +14,8 @@ DIV.Message { background: gray; color:White; padding: .2em; margin-top:.25em; }
 .input-validation-error { border: 1px solid red; background-color: #ffeeee; }
 .validation-summary-errors { font-weight: bold; color: red; }
 .validation-summary-valid { display: none; }
+.editor-field {margin-bottom: .8em;}
+.editor-label{font-weight:bold;}
+.editor-label:after{content:":"}
+.text-box{width:25em;}
+.multi-line{height:5em; font-family:Segoe UI,Verdana;}
